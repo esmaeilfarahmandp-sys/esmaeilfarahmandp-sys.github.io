@@ -1,0 +1,12 @@
+{
+  "name": "خانهٔ پندارها و آثار اسماعیل فرحمند",
+  "short_name": "اسماعیل فرحمند",
+  "description": "پندارها، گفتارها و اشعار اسماعیل فرحمند",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071321",
+  "theme_color": "#071321"
+}
