@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://esmaeilfarahmandp-sys.github.io/sitemap.xml
