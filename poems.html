@@ -43,6 +43,17 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
  .nav button{min-width:78px}
 }
 @media(max-width:400px){.paper.right{left:49%;width:45%}.paper .poem{font-size:clamp(12px,3.3vw,15px)}}
+</style><style id="arsaneh-layout-20261019">
+/* Wider desktop canvas without shrinking the approved font; taller mobile canvas */
+@media (min-width:900px){
+ body{padding-left:0;padding-right:0}
+ .stage{width:min(100vw,calc((100dvh - 72px)*1.5 + 190px));height:calc((100dvh - 72px));max-height:none;aspect-ratio:auto;background-size:100% 100%}
+ .paper .poem{font-size:clamp(13px,1.42vw,23px)}
+}
+@media (orientation:portrait) and (max-width:800px){
+ .stage{width:100%;height:min(calc(100dvh - 88px),calc(100vw * 2.12));aspect-ratio:auto;background-size:100% 100%}
+ .paper.right{top:9%;height:82%}
+}
 </style><script src="assets/arsaneh-poems-data.js"></script><main class="stage" aria-label="کتاب مصور اشعار"><section class="paper left"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="left"></div></section><section class="paper right"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="right"></div></section></main><nav class="nav" aria-label="ورق زدن و انتخاب شعر"><select id="pick" aria-label="انتخاب شعر" style="max-width:35%;background:#081522;color:#f5d9ab;border:1px solid #c99b50;border-radius:18px;padding:5px"></select><button id="prev">❯ قبلی</button><span id="counter"></span><button id="next">بعدی ❮</button></nav><script>
 const poems=window.ARSANEH_POEMS||[];
 const pages=[];
@@ -70,8 +81,8 @@ function render(){
  const right=pages[i],left=pages[i+1];
  document.getElementById("right").textContent=right?.text||"";
  document.getElementById("left").textContent=portrait()?"":left?.text||"";
- document.querySelector(".paper.right h2").textContent=right?.title||"دیوان ارسانه";
- document.querySelector(".paper.left h2").textContent=left?.title||"";
+ document.querySelector(".paper.right h2").textContent=right && right.part===1 ? right.title : "";
+ document.querySelector(".paper.left h2").textContent=left && left.part===1 ? left.title : "";
  document.getElementById("counter").textContent=pages.length?(i+1)+" / "+pages.length:"بارگذاری اشعار…";
  document.getElementById("prev").disabled=i===0;
  document.getElementById("next").disabled=i+step>=pages.length;
