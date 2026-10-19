@@ -72,6 +72,16 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
  .nav{position:relative!important;flex:0 0 auto!important;margin:0 auto!important;min-height:43px!important;max-height:52px!important}
  .paper .poem{overflow-y:auto!important}
 }
+</style><style id="arsaneh-desktop-final-controls">
+/* Laptop only: single-row controls, taller artwork and slightly smaller verse text. */
+@media (min-width:900px) and (orientation:landscape){
+ .stage{height:calc(100dvh - 112px)!important;max-height:calc(100dvh - 112px)!important}
+ .nav{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:8px!important;width:max-content!important;max-width:calc(100vw - 24px)!important;min-height:42px!important;white-space:nowrap!important}
+ .nav button{flex:0 0 auto!important;min-width:78px!important;padding:7px 10px!important}
+ .nav select{flex:0 1 240px!important;min-width:110px!important;max-width:240px!important}
+ .nav #counter{flex:0 0 auto!important;white-space:nowrap!important}
+ .paper .poem{font-size:clamp(11px,calc(1.42vw - 2px),21px)!important}
+}
 </style><script src="assets/arsaneh-poems-data.js"></script><main class="stage" aria-label="کتاب مصور اشعار"><section class="paper left"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="left"></div></section><section class="paper right"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="right"></div></section></main><nav class="nav" aria-label="ورق زدن و انتخاب شعر"><select id="pick" aria-label="انتخاب شعر" style="max-width:35%;background:#081522;color:#f5d9ab;border:1px solid #c99b50;border-radius:18px;padding:5px"></select><button id="prev">❯ قبلی</button><span id="counter"></span><button id="next">بعدی ❮</button></nav><script>
 const poems=window.ARSANEH_POEMS||[];
 const pages=[];
