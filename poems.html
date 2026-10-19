@@ -82,6 +82,20 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
  .nav #counter{flex:0 0 auto!important;white-space:nowrap!important}
  .paper .poem{font-size:clamp(11px,calc(1.42vw - 2px),21px)!important}
 }
+</style><style id="arsaneh-mobile-artwork-controls-20261019">
+/* Phone portrait only: reveal illustrated page, keep controls in one visible row. */
+@media (orientation:portrait) and (max-width:800px){
+ html,body{min-height:0;overflow-x:hidden}
+ body{padding:12px 3px 7px!important;gap:7px!important;justify-content:flex-start!important}
+ .stage{height:min(calc(100dvh - 148px),calc(100vw * 1.95))!important;max-height:calc(100dvh - 148px)!important;min-height:0!important}
+ .paper.right{left:53%!important;width:38%!important;top:15%!important;height:68%!important;padding:2% 1.4%!important;border-radius:12px!important;box-sizing:border-box!important}
+ .paper.right h2{font-size:clamp(12px,3.5vw,19px)!important;line-height:1.4!important}
+ .paper.right .poem{font-size:clamp(12px,3.3vw,19px)!important;line-height:1.58!important;overflow-y:auto!important}
+ .nav{display:flex!important;flex-flow:row nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;width:100%!important;max-width:100%!important;min-height:44px!important;margin:0 auto!important;white-space:nowrap!important}
+ .nav select{flex:1 1 0!important;min-width:0!important;max-width:none!important;width:0!important;padding:6px 3px!important;font-size:12px!important}
+ .nav button{flex:0 0 auto!important;min-width:0!important;padding:7px 6px!important;font-size:12px!important;white-space:nowrap!important}
+ .nav #counter{flex:0 0 auto!important;font-size:12px!important;white-space:nowrap!important}
+}
 </style><script src="assets/arsaneh-poems-data.js"></script><main class="stage" aria-label="کتاب مصور اشعار"><section class="paper left"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="left"></div></section><section class="paper right"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="right"></div></section></main><nav class="nav" aria-label="ورق زدن و انتخاب شعر"><select id="pick" aria-label="انتخاب شعر" style="max-width:35%;background:#081522;color:#f5d9ab;border:1px solid #c99b50;border-radius:18px;padding:5px"></select><button id="prev">❯ قبلی</button><span id="counter"></span><button id="next">بعدی ❮</button></nav><script>
 const poems=window.ARSANEH_POEMS||[];
 const pages=[];
