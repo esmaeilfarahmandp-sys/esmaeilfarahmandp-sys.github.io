@@ -43,6 +43,33 @@ header{flex:0 0 auto;padding:clamp(7px,1.3dvh,14px) 6px}
  #counter{min-width:0;white-space:nowrap}
 }
 @media(max-height:540px){header{padding:5px}.sub{margin-bottom:3px}.page{padding-top:32px;padding-bottom:32px}.controls{padding:4px 0}.cover .emblem{font-size:40px}.cover h1{margin:8px 0}}
+
+/* Philosophical library edition: responsive to visual viewport and device orientation. */
+:root{--paper:#dfc28e;--paperlight:#f1dbad;--night:#071420}
+html{height:100%}
+body{height:100vh;height:100dvh;min-height:0;overflow:hidden;background:radial-gradient(ellipse at 52% 5%,#28435a 0%,#101f31 52%,#050d17 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#f4d9a5 1px,transparent 1.5px);background-size:67px 81px}
+header,.sub,.book,.controls{position:relative;z-index:1}
+.book{border:clamp(4px,1vw,12px) ridge #815a33;border-radius:14px;box-shadow:0 12px 0 #2b1c14,0 22px 45px #0009;min-height:0}
+.page,.page.left{border:0;border-radius:2px;background-color:var(--paper);background-image:radial-gradient(ellipse at 20% 14%,#f9e8c2 0%,transparent 55%),repeating-linear-gradient(5deg,#74451b0b 0px,#74451b0b 1px,transparent 1px,transparent 6px),linear-gradient(100deg,#c7a46f,#f1dcaf 14%,#e7cb95 90%,#bb955f);box-shadow:inset 0 0 0 2px #9b7040,inset 0 0 0 12px #e6c998,inset 0 0 0 14px #ae8149;scrollbar-color:#ab8053 transparent}
+.page.left{background-image:radial-gradient(ellipse at 80% 14%,#f9e8c2 0%,transparent 55%),repeating-linear-gradient(5deg,#74451b0b 0px,#74451b0b 1px,transparent 1px,transparent 6px),linear-gradient(260deg,#c7a46f,#f1dcaf 14%,#e7cb95 90%,#bb955f)}
+.page h2{font-weight:700;color:#654324}
+.prose{color:#31261b}
+.cover{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 90%,#dfb773 0%,#e6d2a7 32%,#e9d6aa 68%,#c19a64 100%);border:double 7px #92683b;box-shadow:inset 0 0 0 5px #e9d4aa,inset 0 0 0 8px #b88b50}
+.cover:before{content:"";position:absolute;inset:13% 8% 8%;z-index:-1;opacity:.75;background:radial-gradient(circle at 50% 67%,#f9d17e 0 9%,transparent 10%),linear-gradient(153deg,transparent 55%,#9d8463 55.5% 68%,transparent 68.5%),linear-gradient(207deg,transparent 56%,#806d57 56.5% 72%,transparent 72.5%),linear-gradient(170deg,transparent 65%,#6c6657 65.5% 79%,transparent 79.5%);mask-image:linear-gradient(to bottom,transparent 30%,#000 75%)}
+.cover:after{content:"✧  اندیشه • تجربه • آگاهی  ✧";position:absolute;bottom:7%;color:#775333;font-size:clamp(10px,1.2vw,16px);letter-spacing:1px}
+.cover .emblem{font-size:clamp(46px,8dvh,90px);text-shadow:0 2px 5px #fff7}
+.cover h1{font-size:clamp(24px,3.8vw,49px);text-shadow:0 1px #fff7}
+.cover p{font-size:clamp(14px,1.7vw,21px)}
+.controls{background:linear-gradient(90deg,transparent,#101e2ed9 10%,#101e2ed9 90%,transparent);border-bottom:1px solid #ac7c42}
+.controls button,.controls select{background:#101f30;border-color:#c69c61}
+@media(max-width:750px){
+ .book{width:min(570px,97vw);border-width:5px}
+ .page{padding:clamp(36px,6dvh,55px) clamp(17px,5vw,27px) 48px}
+ .cover:after{bottom:5%}
+}
+@media(max-height:450px){.sub{display:none}.cover:after{display:none}.cover .emblem{font-size:30px}}
+
 @media(prefers-reduced-motion:no-preference){.page{animation:turn .32s ease-out}@keyframes turn{from{opacity:.5;transform:rotateY(-5deg)}to{opacity:1;transform:rotateY(0)}}}
 </style></head><body>
 <header><a href="index.html">⌂ خانهٔ ارسانه</a><strong>پندارنامه و گفتارها</strong><a href="poems.html">دیوان اشعار ↗</a></header>
@@ -65,7 +92,7 @@ const right=document.getElementById("right"),left=document.getElementById("left"
 const mobile=()=>window.matchMedia("(max-width:750px)").matches;
 let index=0;
 sayings.forEach((_,i)=>{const opt=document.createElement("option");opt.value=i+1;opt.textContent="پند "+fa(i+1);pick.append(opt)});
-function page(el,item){if(!item){el.innerHTML="";return}el.innerHTML=item.cover?'<div class="cover"><div class="emblem">❦</div><div class="orn">✧ ─── ✧</div><h1>پندارنامه و گفتارها</h1><p>اسماعیل فرحمند<br>مجموعهٔ ارسانه</p><div class="orn">✧ ─── ✧</div></div>':('<h2>پند '+fa(item.n)+'</h2><div class="prose">'+item.html.replace(/^<strong>[^<]*<\/strong><br>/,"")+'</div><small>اسماعیل فرحمند | ارسانه</small>');el.scrollTop=0}
+function page(el,item){if(!item){el.innerHTML="";return}el.innerHTML=item.cover?'<div class="cover"><div class="emblem">✧ ☯ ✧</div><div class="orn">✧ ─── ✧</div><h1>پندارنامه و گفتارها</h1><p>اسماعیل فرحمند<br>مجموعهٔ ارسانه</p><div class="orn">✧ ─── ✧</div></div>':('<h2>پند '+fa(item.n)+'</h2><div class="prose">'+item.html.replace(/^<strong>[^<]*<\/strong><br>/,"")+'</div><small>اسماعیل فرحمند | ارسانه</small>');el.scrollTop=0}
 function render(){const m=mobile();index=Math.max(0,Math.min(index,items.length-1));if(!m)index=Math.floor(index/2)*2;page(right,items[index]);page(left,m?null:items[index+1]);counter.textContent=fa(index+1)+" / "+fa(items.length);document.getElementById("prev").disabled=index===0;document.getElementById("next").disabled=index+(m?1:2)>=items.length;pick.value=String(Math.min(items.length-1,Math.max(1,index)));left.hidden=m}
 document.getElementById("next").onclick=()=>{index+=mobile()?1:2;render()};
 document.getElementById("prev").onclick=()=>{index-=mobile()?1:2;render()};
