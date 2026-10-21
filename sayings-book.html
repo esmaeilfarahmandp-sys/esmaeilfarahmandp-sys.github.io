@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پندارنامه و گفتارها | کتاب مصور اسماعیل فرحمند ـ ارسانه</title>
+<meta name="description" content="کتاب ورق‌زدنی پندارنامه و گفتارهای اسماعیل فرحمند، شامل ۵۹ پند و اندیشه در ارسانه.">
+<link rel="canonical" href="https://esmaeilfarahmandp-sys.github.io/sayings-book.html">
+<style>
+:root{--gold:#d4a55d;--ink:#27323c;--cream:#f6e8c7}
+*{box-sizing:border-box}
+body{margin:0;min-height:100dvh;background:radial-gradient(ellipse at 50% 10%,#28465a,#071521 75%);color:#f9e7c1;font-family:Tahoma,"Noto Naskh Arabic",serif;display:flex;flex-direction:column;align-items:center}
+header{width:min(1120px,96vw);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 6px}
+a{color:#f5d39a}header a{text-decoration:none}header strong{font-size:clamp(15px,2vw,23px);color:#efc784}
+.sub{text-align:center;color:#c8af89;margin:0 0 12px;font-size:13px}
+.book{position:relative;width:min(1080px,95vw);min-height:min(70vh,730px);display:grid;grid-template-columns:1fr 1fr;direction:rtl;filter:drop-shadow(0 22px 30px #0009);perspective:1600px}
+.book:after{content:"";position:absolute;top:1%;bottom:1%;right:50%;width:11px;transform:translateX(50%);background:linear-gradient(90deg,#59452d9c,#e3c58b,#5a442b9c);border-radius:10px;z-index:2;pointer-events:none}
+.page{background:linear-gradient(115deg,#e9d5a9,#fbf0d5 18%,#f7e7c4 84%,#ddc397);color:var(--ink);border:11px solid #704b2d;border-radius:10px 3px 3px 10px;min-height:620px;position:relative;padding:55px clamp(20px,4vw,55px) 60px;box-shadow:inset 0 0 0 2px #d7b47c,inset 0 0 0 12px #f7e8c9;overflow:auto;max-height:73vh}
+.page.left{border-radius:3px 10px 10px 3px;background:linear-gradient(95deg,#e3c99b,#fbf0d5 22%,#f7e7c4 90%,#d4b587)}
+.page:before{content:"❦";position:absolute;top:18px;left:0;right:0;text-align:center;font-size:28px;color:#ab7b46}
+.page:after{content:"✦  ❧  ✦";position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#a47a48;font-size:18px}
+.page h2{text-align:center;color:#81502f;font-size:clamp(17px,2vw,24px);border-bottom:1px solid #b99667;padding-bottom:15px;margin:6px 0 25px}
+.prose{line-height:2.5;font-size:clamp(14px,1.45vw,18px);white-space:normal;text-align:justify;overflow-wrap:anywhere}
+.prose strong{color:#935e37}.page small{display:block;text-align:center;color:#9a744d;margin-top:25px}
+.cover{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:470px;border:2px solid #b99766;padding:22px;background:radial-gradient(circle,#fff4d8,#eed6a8)}
+.cover .emblem{font-size:72px;color:#ad7444}.cover h1{font-size:clamp(27px,4vw,48px);color:#75492b;margin:22px 0}.cover p{font-size:19px;color:#6e5a46;line-height:2}.cover .orn{font-size:30px;color:#ad7444}
+.controls{width:min(1080px,95vw);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:17px 0 28px}
+button,select{font:inherit;border:1px solid #bd9153;border-radius:9px;background:#173348;color:#f7e4bf;padding:12px 17px;cursor:pointer}button:hover{background:#2c4b5e}button:disabled{opacity:.4;cursor:default}select{max-width:245px}#counter{min-width:85px;text-align:center;color:#f0c68d}
+@media(max-width:750px){.book{display:block;min-height:0;width:min(570px,96vw)}.book:after,.page.left{display:none}.page{min-height:62vh;max-height:68vh;padding:46px 27px 55px;border-radius:10px}.cover{min-height:49vh}.controls{gap:7px}button,select{padding:10px 12px}.sub{padding:0 12px}}
+@media(prefers-reduced-motion:no-preference){.page{animation:turn .32s ease-out}@keyframes turn{from{opacity:.5;transform:rotateY(-5deg)}to{opacity:1;transform:rotateY(0)}}}
+</style></head><body>
+<header><a href="index.html">⌂ خانهٔ ارسانه</a><strong>پندارنامه و گفتارها</strong><a href="poems.html">دیوان اشعار ↗</a></header>
+<p class="sub">کتابی از اندیشه‌ها و گفتارهای اسماعیل فرحمند • نسخهٔ ورق‌زدنی</p>
+<main class="book" aria-label="کتاب پندار و گفتار">
+<section class="page right" id="right" aria-live="polite"></section><section class="page left" id="left"></section>
+</main>
+<div class="controls">
+<button id="prev" type="button">صفحهٔ پیشین ←</button>
+<span id="counter">…</span>
+<button id="next" type="button">→ صفحهٔ بعد</button>
+<label for="pick">انتخاب پند</label><select id="pick" aria-label="انتخاب پند"></select>
+</div>
+<script src="assets/arsaneh-sayings-data.js"></script>
+<script>
+const sayings=window.ARSANEH_SAYINGS||[];
+const fa=n=>new Intl.NumberFormat("fa-IR").format(n);
+const items=[{cover:true},...sayings.map((html,i)=>({html,n:i+1}))];
+const right=document.getElementById("right"),left=document.getElementById("left"),counter=document.getElementById("counter"),pick=document.getElementById("pick");
+const mobile=()=>window.matchMedia("(max-width:750px)").matches;
+let index=0;
+sayings.forEach((_,i)=>{const opt=document.createElement("option");opt.value=i+1;opt.textContent="پند "+fa(i+1);pick.append(opt)});
+function page(el,item){if(!item){el.innerHTML="";return}el.innerHTML=item.cover?'<div class="cover"><div class="emblem">❦</div><div class="orn">✧ ─── ✧</div><h1>پندارنامه و گفتارها</h1><p>اسماعیل فرحمند<br>مجموعهٔ ارسانه</p><div class="orn">✧ ─── ✧</div></div>':('<h2>پند '+fa(item.n)+'</h2><div class="prose">'+item.html.replace(/^<strong>[^<]*<\/strong><br>/,"")+'</div><small>اسماعیل فرحمند | ارسانه</small>');el.scrollTop=0}
+function render(){const m=mobile();index=Math.max(0,Math.min(index,items.length-1));if(!m)index=Math.floor(index/2)*2;page(right,items[index]);page(left,m?null:items[index+1]);counter.textContent=fa(index+1)+" / "+fa(items.length);document.getElementById("prev").disabled=index===0;document.getElementById("next").disabled=index+(m?1:2)>=items.length;pick.value=String(Math.min(items.length-1,Math.max(1,index)));left.hidden=m}
+document.getElementById("next").onclick=()=>{index+=mobile()?1:2;render()};
+document.getElementById("prev").onclick=()=>{index-=mobile()?1:2;render()};
+pick.onchange=e=>{index=Number(e.target.value);render()};
+window.addEventListener("resize",render);
+window.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")document.getElementById("next").click();if(e.key==="ArrowRight")document.getElementById("prev").click()});
+render();
+</script></body></html>
