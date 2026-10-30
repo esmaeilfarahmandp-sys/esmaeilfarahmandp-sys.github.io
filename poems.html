@@ -96,6 +96,24 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
  .nav button{flex:0 0 auto!important;min-width:0!important;padding:7px 6px!important;font-size:12px!important;white-space:nowrap!important}
  .nav #counter{flex:0 0 auto!important;font-size:12px!important;white-space:nowrap!important}
 }
+</style><style id="arsaneh-seamless-book-paper-20261030">
+/* Let the original illustrated parchment remain the sole visible page surface.
+   Text stays real/selectable; page positioning and navigation are unchanged. */
+.stage .paper,.stage .paper.left,.stage .paper.right{
+ background:transparent!important;
+ background-image:none!important;
+ box-shadow:none!important;
+ border:0!important;
+ outline:0!important;
+ border-radius:0!important;
+ backdrop-filter:none!important;
+ -webkit-backdrop-filter:none!important;
+}
+.stage .paper::before,.stage .paper::after{content:none!important}
+.stage .paper h2,.stage .paper .poem{
+ color:#302316;
+ text-shadow:0 1px 0 rgba(255,247,224,.42);
+}
 </style><script src="assets/arsaneh-poems-data.js"></script><main class="stage" aria-label="کتاب مصور اشعار"><section class="paper left"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="left"></div></section><section class="paper right"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="right"></div></section></main><nav class="nav" aria-label="ورق زدن و انتخاب شعر"><select id="pick" aria-label="انتخاب شعر" style="max-width:35%;background:#081522;color:#f5d9ab;border:1px solid #c99b50;border-radius:18px;padding:5px"></select><button id="prev">❯ قبلی</button><span id="counter"></span><button id="next">بعدی ❮</button></nav><script>
 const poems=window.ARSANEH_POEMS||[];
 const pages=[];
