@@ -170,6 +170,13 @@ body{display:flex;flex-direction:column;align-items:center;justify-content:cente
 @keyframes arsaneh-rtl-next{from{transform:rotateY(0deg)}to{transform:rotateY(-180deg)}}
 @keyframes arsaneh-rtl-prev{from{transform:rotateY(0deg)}to{transform:rotateY(180deg)}}
 @media(prefers-reduced-motion:reduce){.stage .turn-leaf{animation-duration:1ms!important}}
+</style><style id="arsaneh-confirmed-left-to-right-flip">
+/* Confirmed direction: NEXT left leaf -> right; PREVIOUS right leaf -> left. */
+.stage .turn-leaf.forward{transform-origin:right center!important;animation:arsaneh-confirmed-next 900ms ease-in-out forwards!important}
+.stage .turn-leaf.backward{transform-origin:left center!important;animation:arsaneh-confirmed-prev 900ms ease-in-out forwards!important}
+@keyframes arsaneh-confirmed-next{from{transform:rotateY(0deg)}to{transform:rotateY(180deg)}}
+@keyframes arsaneh-confirmed-prev{from{transform:rotateY(0deg)}to{transform:rotateY(-180deg)}}
+@media(prefers-reduced-motion:reduce){.stage .turn-leaf{animation-duration:1ms!important}}
 </style><script src="assets/arsaneh-poems-data.js"></script><main class="stage" aria-label="کتاب مصور اشعار"><section class="paper left"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="left"></div></section><section class="paper right"><h2>زادروزت مبارک، مهرماهی</h2><div class="poem" id="right"></div></section></main><nav class="nav" aria-label="ورق زدن و انتخاب شعر"><select id="pick" aria-label="انتخاب شعر" style="max-width:35%;background:#081522;color:#f5d9ab;border:1px solid #c99b50;border-radius:18px;padding:5px"></select><button id="prev">❯ قبلی</button><span id="counter"></span><button id="next">بعدی ❮</button></nav><script>
 const poems=window.ARSANEH_POEMS||[];
 const pages=[];
@@ -213,7 +220,7 @@ function turn(delta){
  if(target<0||target>=pages.length)return;
  const stage=document.querySelector(".stage");
  const isPortrait=portrait();
- const sourcePage=stage.querySelector(delta>0||isPortrait?".paper.right":".paper.left");
+ const sourcePage=stage.querySelector(delta>0&&!isPortrait?".paper.left":".paper.right");
  const rect=sourcePage.getBoundingClientRect(),stageRect=stage.getBoundingClientRect();
  const leaf=document.createElement("div");
  leaf.className="turn-leaf "+(delta>0?"forward":"backward");
@@ -222,8 +229,8 @@ function turn(delta){
  leaf.style.top=(rect.top-stageRect.top)+"px";
  leaf.style.width=rect.width+"px";
  leaf.style.height=rect.height+"px";
- const current=pages[delta>0?i:(isPortrait?i:i+1)];
- const incoming=pages[delta>0?(isPortrait?target:target+1):target];
+ const current=pages[delta>0?(isPortrait?i:i+1):i];
+ const incoming=pages[delta>0?target:(isPortrait?target:target+1)];
  function face(data,back){
    const el=document.createElement("div");el.className="turn-face"+(back?" back":"");
    const h=document.createElement("h2");h.textContent=data?.part===1?data.title:"";
