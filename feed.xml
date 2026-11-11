@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-<channel>
+<rss version="2.0"><channel>
   <title>ارسانه | شعر، پندار و گفتار اسماعیل فرحمند</title>
   <link>https://esmaeilfarahmandp-sys.github.io/</link>
-  <description>ارسانه؛ خانهٔ رسمی شعر، پندار و گفتار اسماعیل فرحمند</description>
-  <language>fa</language>
-  <lastBuildDate>Thu, 24 Sep 2026 12:10:27 GMT</lastBuildDate>
+  <description>تازه‌ترین شعرها و نوشته‌های اسماعیل فرحمند در دیوان ارسانه</description>
+  <language>fa-IR</language>
+  <lastBuildDate>Wed, 11 Nov 2026 15:12:57 GMT</lastBuildDate>
   <item>
-    <title>پندار و گفتار اسماعیل فرحمند</title>
-    <link>https://esmaeilfarahmandp-sys.github.io/#sayings</link>
-    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/</guid>
-    <description>مجموعهٔ پندار و گفتار شمارهٔ ۱ تا ۵۸</description>
-    <pubDate>Thu, 24 Sep 2026 12:10:27 GMT</pubDate>
+    <title>کجایی که رخ نمی‌نمایی؟ | شعر شمارهٔ 29</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-29</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-29</guid>
+    <description>سرودهٔ اسماعیل فرحمند؛ متن کامل شعر در دیوان ارسانه.</description>
+    <pubDate>Wed, 11 Nov 2026 00:02:22 GMT</pubDate>
   </item>
-</channel>
-</rss>
+  <item>
+    <title>دل‌دل نکن | شعر شمارهٔ 28</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-28</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-28</guid>
+    <description>سرودهٔ اسماعیل فرحمند؛ متن کامل شعر در دیوان ارسانه.</description>
+    <pubDate>Tue, 10 Nov 2026 23:40:47 GMT</pubDate>
+  </item>
+  <item>
+    <title>از کس خبری نیست | شعر شمارهٔ 27</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-27</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-27</guid>
+    <description>سرودهٔ اسماعیل فرحمند؛ متن کامل شعر در دیوان ارسانه.</description>
+    <pubDate>Tue, 10 Nov 2026 23:26:50 GMT</pubDate>
+  </item>
+  <item>
+    <title>دریای سکوت | شعر شمارهٔ 26</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-26</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-26</guid>
+    <description>سرودهٔ اسماعیل فرحمند؛ متن کامل شعر در دیوان ارسانه.</description>
+    <pubDate>Tue, 10 Nov 2026 23:03:26 GMT</pubDate>
+  </item>
+  <item>
+    <title>شیدای دربند | شعر شمارهٔ 25</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-25</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-25</guid>
+    <description>سرودهٔ اسماعیل فرحمند؛ متن کامل شعر در دیوان ارسانه.</description>
+    <pubDate>Tue, 10 Nov 2026 22:47:54 GMT</pubDate>
+  </item>
+  <item>
+    <title>سرآغاز یا پایان | شعر شمارهٔ 24</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-24</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/poems-text.html#poem-24</guid>
+    <description>سرودهٔ اسماعیل فرحمند؛ متن کامل شعر در دیوان ارسانه.</description>
+    <pubDate>Tue, 10 Nov 2026 22:34:57 GMT</pubDate>
+  </item>
+  <item>
+    <title>پندارنامه و گفتارها | ۵۹ پند</title>
+    <link>https://esmaeilfarahmandp-sys.github.io/sayings-text.html</link>
+    <guid isPermaLink="true">https://esmaeilfarahmandp-sys.github.io/sayings-text.html</guid>
+    <description>متن کامل ۵۹ پند و گفتار اسماعیل فرحمند</description>
+    <pubDate>Wed, 21 Oct 2026 06:32:10 GMT</pubDate>
+  </item>
+</channel></rss>
