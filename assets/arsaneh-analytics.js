@@ -5,7 +5,7 @@
  */
 (() => {
   "use strict";
-  const COUNTER_SITE_ID = ""; // شناسهٔ عمومی UUID از داشبورد Counter.dev
+  const COUNTER_SITE_ID = "034b0099-8961-4c5e-a693-59f73d9bc24b"; // شناسهٔ عمومی UUID از داشبورد Counter.dev
   const SITE_HOST = "esmaeilfarahmandp-sys.github.io";
   const validID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   if (!validID.test(COUNTER_SITE_ID)) return; // پیش‌فرض: بدون ردیابی
@@ -15,6 +15,7 @@
   script.src = "https://cdn.counter.dev/script.js";
   script.async = true;
   script.dataset.id = COUNTER_SITE_ID;
+  script.dataset.utcoffset = "4";
   script.referrerPolicy = "strict-origin-when-cross-origin";
   document.head.appendChild(script);
 })();
