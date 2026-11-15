@@ -51,6 +51,17 @@ for (const p of ['book-reader.html','book-coming-soon.html']) {
   assert(html.includes(canonical), 'Canonical missing in ' + p);
 }
 assert(sitemap.includes('<loc>https://esmaeilfarahmandp-sys.github.io/</loc>') && sitemap.includes('<lastmod>2026-11-15</lastmod>'), 'Homepage sitemap lastmod is stale');
+// Verify discoverability and canonical consistency; do not alter the literary texts.
+assert(home.includes('<meta property="og:site_name" content="ارسانه">'), 'Site name metadata missing');
+assert(home.includes('خانهٔ پندار و گفتار'), 'Pandarnamah discovery phrase missing');
+assert(home.includes('href="poems-text.html"'), 'Searchable poems link missing');
+assert(home.includes('href="sayings-text.html"'), 'Searchable sayings link missing');
+assert(read('sayings-text.html').includes('خانهٔ پندار و گفتار'), 'Pandarnamah descriptive heading missing');
+for (const p of ['index.html', 'sayings-text.html', 'sayings-book.html', 'poems-text.html']) {
+  const html = read(p);
+  const canonical = '<link rel="canonical" href="https://esmaeilfarahmandp-sys.github.io/' + (p === 'index.html' ? '' : p) + '">';
+  assert(html.includes(canonical), 'Canonical missing in ' + p);
+}
 const feed = read('feed.xml');
 assert(feed.includes(`#poem-${poems.length}`), 'RSS latest poem is stale');
 assert(read('book-preview.html').includes('اسماعیل فرحمند'), 'Author name typo in preview');
