@@ -50,7 +50,7 @@ for (const p of ['book-reader.html','book-coming-soon.html']) {
   const canonical = '<link rel="canonical" href="https://esmaeilfarahmandp-sys.github.io/' + p + '">';
   assert(html.includes(canonical), 'Canonical missing in ' + p);
 }
-assert(/<loc>https:\/\/esmaeilfarahmandp-sys\.github\.io\/</loc>\s*<lastmod>2026-11-15<\/lastmod>/.test(sitemap), 'Homepage sitemap lastmod is stale');
+assert(sitemap.includes('<loc>https://esmaeilfarahmandp-sys.github.io/</loc>') && sitemap.includes('<lastmod>2026-11-15</lastmod>'), 'Homepage sitemap lastmod is stale');
 const feed = read('feed.xml');
 assert(feed.includes(`#poem-${poems.length}`), 'RSS latest poem is stale');
 assert(read('book-preview.html').includes('اسماعیل فرحمند'), 'Author name typo in preview');
