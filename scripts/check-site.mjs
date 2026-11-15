@@ -38,10 +38,19 @@ for (const page of ['index.html', 'poems-text.html', 'poems.html', 'sayings-text
     `Analytics loader missing or duplicated: ${page}`);
 }
 const sitemap = read('sitemap.xml');
-for (const path of ['/', '/poems.html', '/poems-text.html', '/sayings-book.html', '/sayings-text.html', '/privacy.html']) {
+for (const path of ['/', '/poems.html', '/poems-text.html', '/sayings-book.html', '/sayings-text.html', '/privacy.html', '/book-reader.html', '/book-coming-soon.html']) {
   assert(sitemap.includes(`<loc>https://esmaeilfarahmandp-sys.github.io${path}</loc>`),
     `Sitemap missing ${path}`);
 }
+// Only real public pages belong in the sitemap; downloadable archives stay outside the site.
+assert(!fs.existsSync('downloads'), 'Site must not contain downloadable archive copies');
+assert(!sitemap.includes('/downloads/'), 'Sitemap must not advertise archived downloads');
+for (const p of ['book-reader.html','book-coming-soon.html']) {
+  const html = read(p);
+  const canonical = '<link rel="canonical" href="https://esmaeilfarahmandp-sys.github.io/' + p + '">';
+  assert(html.includes(canonical), 'Canonical missing in ' + p);
+}
+assert(sitemap.includes('<loc>https://esmaeilfarahmandp-sys.github.io/</loc>\\n    <lastmod>2026-11-15</lastmod>'), 'Homepage sitemap lastmod is stale');
 const feed = read('feed.xml');
 assert(feed.includes(`#poem-${poems.length}`), 'RSS latest poem is stale');
 assert(read('book-preview.html').includes('اسماعیل فرحمند'), 'Author name typo in preview');
